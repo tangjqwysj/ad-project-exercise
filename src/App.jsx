@@ -6,7 +6,7 @@ class App extends Component{
       return (
          <div className="box">
             hahah
-            <span>xxxx</span>
+            <span>xxxx, uuuuuuuuuuuuuuuuuu</span>
          </div>
       )
    }
