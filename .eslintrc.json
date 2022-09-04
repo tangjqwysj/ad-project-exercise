@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": ["airbnb"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint", "plugin:import/typescript"],
+  "rules": {
+    "react/prefer-stateless-function": "off",
+    "linebreak-style": "off",
+    "semi": ["error", "never"],
+    "quotes": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "no-use-before-define": "off"
+  }
+}
