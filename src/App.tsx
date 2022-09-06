@@ -1,16 +1,24 @@
 import React, { Component } from "react"
+import { RouteComponentProps } from "react-router-dom"
 import "./style.scss"
 
-interface Props {}
+interface Props extends RouteComponentProps {}
 
 class App extends Component<Props> {
+  handleRoutes = () => {
+    const {
+      location: { pathname },
+      history,
+    } = this.props
+    if (pathname === "/") {
+      history.push("/index")
+      return false
+    }
+    return true
+  }
   render() {
-    return (
-      <div className="box">
-        hahah
-        <span>xxxx,xxxx uuuuuuuuuuuuuuuuuu</span>
-      </div>
-    )
+    const { children } = this.props
+    return <div className="container">{this.handleRoutes() && children}</div>
   }
 }
 
