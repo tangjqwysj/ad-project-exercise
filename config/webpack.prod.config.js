@@ -14,6 +14,12 @@ const webpackProdConfig = {
       filename: "index.html",
       template: path.join(__dirname, "../src/index.html"),
     }),
+    new HtmlWebpackPlugin({
+      title: "React Exercise",
+      inject: "body",
+      filename: "index2.html",
+      template: path.join(__dirname, "../src/index2.html"),
+    }),
   ],
 }
 

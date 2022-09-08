@@ -1,4 +1,5 @@
 const path = require("path")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const webpackBaseConfig = {
   entry: path.join(__dirname, "../src/index.jsx"),
@@ -8,10 +9,11 @@ const webpackBaseConfig = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
-    alias:{
-      pages:path.join(__dirname,"../src/pages")
-    }
+    alias: {
+      pages: path.join(__dirname, "../src/pages"),
+    },
   },
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -20,7 +22,7 @@ const webpackBaseConfig = {
       },
       {
         test: /\.(sc|c)ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.tsx$/,
