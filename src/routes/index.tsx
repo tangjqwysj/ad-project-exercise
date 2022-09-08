@@ -10,13 +10,13 @@ import App from "../App"
 const routes = [
   {
     path: "/index",
-    exact: false,
+    exact: true,
     component: IndexPage,
     title: "",
   },
   {
     path: "/login",
-    exact: false,
+    exact: true,
     component: LoginPage,
     title: "",
   },
