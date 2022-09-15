@@ -51,3 +51,13 @@ module.exports = {
   },
  };
 ```
+
+<hr/>
+
+**加了speed-measure-webpack-plugin**, 产生Error: You forgot to add 'mini-css-extract-plugin' plugin错误提示
+
+一是 直接弃用spm, 使用webpack自带的；
+
+webpack 已经不用这个插件了，尝试使用 `webpack --profile`或 `Profile`插件，在 v5 中我们改进了插件，现在计算 loaders/plugins/etc，所以你不再需要这个插件了
+
+二是 对minicssextractplugin进行版本回退，卸载重装@1.3.6版本也可以正常使用
