@@ -11,6 +11,9 @@ const webpackBaseConfig = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     alias: {
       pages: path.join(__dirname, "../src/pages"),
+      '@utils': path.join(__dirname, '../src/utils'),
+      '@components': path.join(__dirname, '../src/components'),
+      common: path.join(__dirname, '../src/common'),
     },
   },
   plugins: [new MiniCssExtractPlugin()],
@@ -25,9 +28,20 @@ const webpackBaseConfig = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         use: "ts-loader",
       },
+      {
+         test: /\.(jpg|png|jpe?g|gif|svg)(\?.*)?$/i,
+         use: [
+             {
+                 loader: 'url-loader',
+                 options: {
+                     limit: 5 * 1024,
+                 },
+             },
+         ],
+     },
     ],
   },
 }

@@ -4,6 +4,7 @@ import { renderRoutes } from "react-router-config"
 
 import IndexPage from "pages/index"
 import LoginPage from "pages/login"
+import SearchPromotionPage from 'pages/SearchPromotion';
 
 import App from "../App"
 
@@ -12,6 +13,12 @@ const routes = [
     path: "/index",
     exact: true,
     component: IndexPage,
+    title: "",
+  },
+  {
+    path: "/searchPromotion",
+    exact: false,
+    component: SearchPromotionPage,
     title: "",
   },
   {

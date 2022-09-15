@@ -1,0 +1,8 @@
+
+一是 直接弃用spm, 使用webpack自带的；
+webpack已经在没有插件的情况下做到了这一点，尝试使用webpack --profile或Profile插件，在v5中我们改进插件，现在计算加载器/插件/等，所以你不再需要这个插件了
+
+二是 对minicssextractplugin进行版本回退，卸载重装@1.3.6版本也可以正常使用；
+————————————————
+版权声明：本文为CSDN博主「懒得跟猪打架」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u011024243/article/details/125282234
