@@ -4,24 +4,27 @@
   },
   "extends": ["airbnb"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint", "plugin:import/typescript"],
+  "plugins": ["react", "@typescript-eslint", "import/typescript"],
   //出现import/no-unresolved错误, plugins中添加"plugin:import/typescript",https://stackoverflow.com/questions/55198502/using-eslint-with-typescript-unable-to-resolve-path-to-module
   "rules": {
     "react/prefer-stateless-function": "off",
     "linebreak-style": "off",
     "semi": ["error", "never"],
     "quotes": "off",
-    "react/jsx-filename-extension": [
-      "error",
-      {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    ],
+   //  "react/jsx-filename-extension": [
+   //    "error",
+   //    {
+   //      "extensions": [".js", ".jsx", ".ts", ".tsx"]
+   //    }
+   //  ],
     "import/no-extraneous-dependencies": "off",
     "no-use-before-define": "off"
   }
 //   "settings": {
 //     "import/resolver": {
+//       "node": {
+//         "extensions": [".js", ".jsx", ".ts", ".tsx"]
+//       },
 //       "alias": {
 //         "map": [
 //           ["pages", "./src/pages"],
