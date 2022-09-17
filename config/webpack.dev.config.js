@@ -8,6 +8,8 @@ const mockMiddleware = require("./mock.config")
 // const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 // const smp = new SpeedMeasurePlugin();
 
+const webpack = require('webpack');
+
 const webpackDevConfig = {
   mode: "development",
   plugins: [
@@ -24,6 +26,10 @@ const webpackDevConfig = {
       filename: "index2.html",
       template: path.join(__dirname, "../src/index2.html"),
     }),
+    new webpack.DllReferencePlugin({
+      // 描述 react 动态链接库的文件内容
+      manifest: require(path.join(__dirname, '../src/dll/', 'vendor.manifest.json')),
+  }),
   ],
   devServer: {
    contentBase: path.join(__dirname, '../src'),

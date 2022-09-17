@@ -14,6 +14,7 @@ const webpackBaseConfig = {
       '@utils': path.join(__dirname, '../src/utils'),
       '@components': path.join(__dirname, '../src/components'),
       common: path.join(__dirname, '../src/common'),
+      context: path.join(__dirname, '../src/context'),
     },
   },
   plugins: [new MiniCssExtractPlugin()],
