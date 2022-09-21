@@ -1,0 +1,52 @@
+.account-component-box {
+   height: 267px;
+   background-color: #ffffff;
+   padding: 18px 20px 2px;
+   border-radius: 8px;
+   box-shadow: 1px 1px 20px 0 rgba(183, 183, 188, 0.1);
+
+   .examine {
+      display: flex;
+      margin-top: 10px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+
+      .status {
+         font-size: 12px;
+         border-radius: 9px;
+         padding: 0 6px;
+         height: 22px;
+         line-height: 20px;
+
+         &.isNotOk {
+            border: 1px solid #d4d4d4;
+            color: #333;
+         }
+         &.isOk {
+            border: 1px solid #1890ff;
+            color: #1890ff;
+         }
+      }
+   }
+
+   .balance,
+   .credit {
+      margin-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .text {
+         font-size: 12px;
+         color: #999;
+         line-height: 18px;
+         margin-bottom: 2px;
+      }
+      .value {
+         font-size: 22px;
+         color: #000;
+         line-height: 26px;
+      }
+   }
+}

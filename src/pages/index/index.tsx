@@ -5,7 +5,11 @@ import { RouteComponentProps } from "react-router-dom"
 import { Select, Button, DatePicker } from "antd"
 import DataTrend from "@components/DataTrend"
 import PromotionCard from "./components/PromotionCard"
-import ProductCard from './components/ProductCard';
+import ProductCard from "./components/ProductCard"
+import Account from "./components/Account"
+import IndexBanner from "./components/IndexBanner"
+import ProductNews from "./components/ProductNews"
+import Footer from "@components/Footer"
 import { ThemeContext, ThemeType } from "context/theme"
 import { SettingOutlined } from "@ant-design/icons"
 import "./index.scss"
@@ -15,10 +19,10 @@ const { Option } = Select
 interface IProps extends RouteComponentProps {}
 
 interface IStates {
-   theme: ThemeType;
+  theme: ThemeType
 }
 
-class IndexPage extends Component<IProps,IStates> {
+class IndexPage extends Component<IProps, IStates> {
   state = {
     theme: {
       buttonType: "primary",
@@ -85,12 +89,43 @@ class IndexPage extends Component<IProps,IStates> {
                 <PromotionCard history={history} />
               </div>
               <div className="product-card-area">
-               <ProductCard />
+                <ProductCard />
               </div>
             </div>
-            <div className="right-content"></div>
+            <div className="right-content">
+              <div className="account-area">
+                <Account />
+              </div>
+              <div className="index-banner-area">
+                <IndexBanner />
+              </div>
+              <div className="product-news-area">
+                <ProductNews />
+              </div>
+              <div className="right-footer-area">
+                <div className="title">品牌推广</div>
+                <div className="btns">
+                  <div className="label">热门产品：</div>
+                  <Button
+                    size="small"
+                    style={{ marginRight: 10 }}
+                  >
+                    品牌专区
+                  </Button>
+                  <Button size="small">巨屏广告</Button>
+                </div>
+              </div>
+              <div className="right-bottom-img">
+                <img
+                  src="assets/imgs/right-bg.png"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
-          <div className="foot-box"></div>
+          <div className="foot-box">
+            <Footer />
+          </div>
           <div className="setting-btn">
             <SettingOutlined
               style={{ fontSize: 36, color: "#326fff" }}
