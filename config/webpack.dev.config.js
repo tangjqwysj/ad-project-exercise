@@ -8,7 +8,9 @@ const mockMiddleware = require("./mock.config")
 // const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 // const smp = new SpeedMeasurePlugin();
 
-const webpack = require('webpack');
+const webpack = require("webpack")
+
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 
 const webpackDevConfig = {
   mode: "development",
@@ -28,11 +30,12 @@ const webpackDevConfig = {
     }),
     new webpack.DllReferencePlugin({
       // 描述 react 动态链接库的文件内容
-      manifest: require(path.join(__dirname, '../src/dll/', 'vendor.manifest.json')),
-  }),
+      manifest: require(path.join(__dirname, "../src/dll/", "vendor.manifest.json")),
+    }),
+    new ForkTsCheckerWebpackPlugin(),
   ],
   devServer: {
-   contentBase: path.join(__dirname, '../src'),
+    contentBase: path.join(__dirname, "../src"),
     hot: true,
     port: 9507,
     //  proxy: {

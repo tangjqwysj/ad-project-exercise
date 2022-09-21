@@ -11,10 +11,10 @@ const webpackBaseConfig = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     alias: {
       pages: path.join(__dirname, "../src/pages"),
-      '@utils': path.join(__dirname, '../src/utils'),
-      '@components': path.join(__dirname, '../src/components'),
-      common: path.join(__dirname, '../src/common'),
-      context: path.join(__dirname, '../src/context'),
+      "@utils": path.join(__dirname, "../src/utils"),
+      "@components": path.join(__dirname, "../src/components"),
+      common: path.join(__dirname, "../src/common"),
+      context: path.join(__dirname, "../src/context"),
     },
   },
   plugins: [new MiniCssExtractPlugin()],
@@ -23,6 +23,7 @@ const webpackBaseConfig = {
       {
         test: /\.jsx?$/,
         use: "babel-loader",
+        exclude: /node_modules/,
       },
       {
         test: /\.(sc|c)ss$/,
@@ -30,19 +31,25 @@ const webpackBaseConfig = {
       },
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            transpileOnly: true,
+          },
+        },
+        exclude: /node_modules/,
       },
       {
-         test: /\.(jpg|png|jpe?g|gif|svg)(\?.*)?$/i,
-         use: [
-             {
-                 loader: 'url-loader',
-                 options: {
-                     limit: 5 * 1024,
-                 },
-             },
-         ],
-     },
+        test: /\.(jpg|png|jpe?g|gif|svg)(\?.*)?$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 5 * 1024,
+            },
+          },
+        ],
+      },
     ],
   },
 }
